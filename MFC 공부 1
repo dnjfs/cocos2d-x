@@ -1,0 +1,39 @@
+MFC(Microsoft Foundation Classes)
+C++로 만들어진 Windows 응용 프로그램 개발을 위한 라이브러리
+
+
+- MFC 앱 프로젝트 생성 시 설정값
+애플리케이션 종류: 대화 상자 기반
+MFC 사용: 정적 라이브러리에서 MFC 사용
+
+
+- 버튼과 대화상자 생성
+도구 상자에서 Button을 선택하여 생성 후 버튼 더블클릭
+
+void C[프로젝트 이름]Dlg::OnBnClicked[버튼의 ID]()
+{
+ MessageBox(TEXT("Hello World!"));
+}
+
+
+- 대화 상자의 기본 글꼴 변경
+속성에서 Font(Size)값 변경
+
+
+- CString 클래스
+MFC의 문자열 관리 클래스
+Button 클릭 시 Edit에서 입력한 내용 출력
+void CExamODBCDlg::OnBnClickedShowStrBtn()
+{
+ CString str;
+ GetDlgItemText(IDC_INPUT_STR_EDIT, str);
+ MessageBox(str);
+}
+
+
+- 채팅로그 만들기
+Edit에 입력한 문자열을 Button을 눌러 가져와 List에 InsertString();
+
+
+- List끼리 문자열 주고받기
+문자열 더블클릭 시 해당 문자열을 str에 저장하여 List에서 삭제 후 반대쪽 List에 InsertString(-1, str);
